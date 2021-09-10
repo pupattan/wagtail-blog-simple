@@ -1,8 +1,66 @@
-# Cache objects
-packer_cache/
+*.py[cod]
 
-# Crash log
-crash.log
+# C extensions
+*.so
 
-# For built boxes
-*.box
+# Packages
+*.egg
+*.egg-info
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Virtual environment
+venv
+penv
+
+# Environment files
+.env
+.env-mysql
+environment_variables.txt
+environment_variables.py
+run.py
+
+# pycharm
+.idea
+.idea/*
+.idea/
+/.idea/
+
+# Mac dirt
+.DS_Store
+
+scratch*
+scratch/*
+staticfiles/*
+staticfiles*
+*test/
+logs/*
+venv2/*
+mediadir/*
+.vscode/*
+dist/*
