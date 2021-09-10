@@ -1,2 +1,2 @@
-# wagtail_blog2
+# wagtail-blog-simple
 Simple  and customizable blog app for wagtail 
