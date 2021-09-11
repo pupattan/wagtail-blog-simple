@@ -12,6 +12,7 @@ setup(
     keywords="django wagtail blog app",
     author='Pulak Pattanayak',
     long_description=README,
+    long_description_content_type='text/markdown',
     install_requires=[
         'Django>=3.0.0',
         'wagtail',

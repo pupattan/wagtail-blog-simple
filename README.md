@@ -17,14 +17,16 @@ See http://docs.wagtail.io
 
 Tested with Wagtail 2.x and Django 2.2.
 
-1. `pip install wagtail-blog`
+1. `pip install wagtail-blog-simple`
 2. Add `blog` to INSTALLED_APPS in settings.py 
 3. Update WAGTAILEMBEDS_FINDERS as follows
-`WAGTAILEMBEDS_FINDERS = [
+```
+WAGTAILEMBEDS_FINDERS = [
     {
         'class': 'blog.embed_finder.GistEmbedFinder'
     }
-]`
+]
+```
 4. Add `url(r'^blog/', include('blog.urls', namespace="blog")),` to urls.py
 5. `python manage.py migrate`
 6. Override [templates](/blog/templates/blog/) as needed.
