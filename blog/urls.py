@@ -1,10 +1,12 @@
 from django.conf.urls import url
 from . import views
-
+from django.urls import path
 
 app_name = 'blog'
 
 urlpatterns = [
+    path('', views.index_page, name="index"),
+    url(r'(?P<blog_slug>[\w-]+)/', views.blog_view, name="blog_view"),
     url(r'^tag/(?P<tag>[-\w]+)/', views.tag_view, name="tag"),
     url(r'^category/(?P<category>[-\w]+)/feed/$', views.LatestCategoryFeed(), name="category_feed"),
     url(r'^category/(?P<category>[-\w]+)/', views.category_view, name="category"),

@@ -8,6 +8,11 @@ from django.shortcuts import get_object_or_404
 from django.template.defaultfilters import slugify
 from wagtail.snippets.models import register_snippet
 from taggit.models import Tag
+from django.urls import reverse
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.core.fields import StreamField
+from wagtail.core import blocks
 
 from .abstract import (
     BlogCategoryAbstract,
@@ -131,7 +136,7 @@ def get_blog_context(context):
     )
     return context
 
-
+from django.shortcuts import redirect
 class BlogPage(BlogPageAbstract):
     class Meta:
         verbose_name = _('Blog page')
@@ -149,3 +154,15 @@ class BlogPage(BlogPageAbstract):
         return context
 
     parent_page_types = ['blog.BlogIndexPage']
+
+    related_blog = StreamField([
+        ('related_blog', blocks.PageChooserBlock(target_model='blog.BlogPage', required=False))
+    ], null=True, blank=True)
+
+    content_panels = BlogPageAbstract.content_panels + [
+        StreamFieldPanel('related_blog'),
+    ]
+
+    @property
+    def url(self):
+        return reverse('blog:blog_view', args=(self.slug, ))

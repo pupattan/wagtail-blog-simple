@@ -5,6 +5,16 @@ from django.shortcuts import get_object_or_404
 from django.conf import settings
 
 
+def index_page(request):
+    index = BlogIndexPage.objects.first()
+    return index.serve(request, slug='blog-index')
+
+
+def blog_view(request, blog_slug):
+    index = BlogPage.objects.first()
+    return index.serve(request, slug=blog_slug)
+
+
 def tag_view(request, tag):
     index = BlogIndexPage.objects.first()
     return index.serve(request, tag=tag)
