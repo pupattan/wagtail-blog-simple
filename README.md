@@ -15,7 +15,7 @@ Simple  and customizable blog app for wagtail
 You should start with a existing wagtail django project and have a basic understanding of Wagtail before starting.
 See http://docs.wagtail.io
 
-Tested with Wagtail 2.x and Django 2.2.
+Tested with Wagtail 2.x and Django 3.1
 
 1. `pip install wagtail-blog-simple`
 2. Add `blog` to INSTALLED_APPS in settings.py 
