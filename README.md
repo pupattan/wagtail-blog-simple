@@ -17,6 +17,7 @@ See http://docs.wagtail.io
 
 Tested with Wagtail 2.x and Django 3.1
 
+Refer [here](https://docs.wagtail.io/en/stable/getting_started/index.html) for wagtail configuration 
 1. `pip install wagtail-blog-simple`
 2. Add `blog` to INSTALLED_APPS in settings.py 
 3. Update WAGTAILEMBEDS_FINDERS as follows
