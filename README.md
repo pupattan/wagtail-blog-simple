@@ -31,6 +31,13 @@ WAGTAILEMBEDS_FINDERS = [
 4. Add `url(r'^blog/', include('wagtail_blog.urls', namespace="blog")),` to urls.py
 5. `python manage.py migrate`
 6. Override [templates](/wagtail_blog/templates/blog/) as needed.
+7. Create a 'Blog index' page in wagtail cms dashboard (under root page)
+
+ ![image](https://user-images.githubusercontent.com/19246595/133918962-aae57142-71c5-4ff8-b573-46e9b31b4710.png)
+8. Then add sub pages to Blog Index page which will your blogs
+
+![image](https://user-images.githubusercontent.com/19246595/133919010-1de1d950-6b4b-46d1-940e-eb6958893418.png)
+
 
 ## Extending
 
