@@ -1,7 +1,7 @@
 # In settings.py use  path of your class in WAGTAILEMBEDS_FINDERS
 # WAGTAILEMBEDS_FINDERS = [
 #     {
-#         'class': 'blog.embed_finder.GistEmbedFinder'
+#         'class': 'wagtail_blog.embed_finder.GistEmbedFinder'
 #     }
 # ]
 # https://docs.wagtail.io/en/stable/advanced_topics/embeds.html?highlight=oembed#custom-embed-finder-classes

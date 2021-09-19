@@ -2,7 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.urls import path
 
-app_name = 'blog'
+app_name = 'wagtail_blog'
 
 urlpatterns = [
     path('', views.index_page, name="index"),

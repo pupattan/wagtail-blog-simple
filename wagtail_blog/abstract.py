@@ -93,7 +93,7 @@ class BlogPageTagAbstract(TaggedItemBase):
 
 
 def limit_author_choices():
-    """ Limit choices in blog author field based on config settings """
+    """ Limit choices in wagtail_blog author field based on config settings """
     LIMIT_AUTHOR_CHOICES = getattr(settings, 'BLOG_LIMIT_AUTHOR_CHOICES_GROUP', None)
     if LIMIT_AUTHOR_CHOICES:
         if isinstance(LIMIT_AUTHOR_CHOICES, str):
@@ -114,7 +114,7 @@ class BlogPageAbstract(Page):
     tags = ClusterTaggableManager(through='BlogPageTag', blank=True)
     date = models.DateField(
         _("Post date"), default=datetime.datetime.today,
-        help_text=_("This date may be displayed on the blog post. It is not "
+        help_text=_("This date may be displayed on the wagtail_blog post. It is not "
                     "used to schedule posts to go live at a later date.")
     )
     header_image = models.ForeignKey(

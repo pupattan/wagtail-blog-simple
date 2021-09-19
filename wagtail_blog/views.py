@@ -7,7 +7,7 @@ from django.conf import settings
 
 def index_page(request):
     index = BlogIndexPage.objects.first()
-    return index.serve(request, slug='blog-index')
+    return index.serve(request, slug='wagtail_blog-index')
 
 
 def blog_view(request, blog_slug):
@@ -78,7 +78,7 @@ class LatestCategoryFeed(Feed):
         return "Blog: " + category.name
 
     def link(self, category):
-        return "/blog/category/" + category.slug
+        return "/wagtail_blog/category/" + category.slug
 
     def get_object(self, request, category):
         return get_object_or_404(BlogCategory, slug=category)

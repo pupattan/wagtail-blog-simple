@@ -19,18 +19,18 @@ Tested with Wagtail 2.x and Django 3.1
 
 Refer [here](https://docs.wagtail.io/en/stable/getting_started/index.html) for wagtail configuration 
 1. `pip install wagtail-blog-simple`
-2. Add `blog` to INSTALLED_APPS in settings.py 
+2. Add `wagtail_blog` to INSTALLED_APPS in settings.py 
 3. Update WAGTAILEMBEDS_FINDERS as follows
 ```
 WAGTAILEMBEDS_FINDERS = [
     {
-        'class': 'blog.embed_finder.GistEmbedFinder'
+        'class': 'wagtail_blog.embed_finder.GistEmbedFinder'
     }
 ]
 ```
-4. Add `url(r'^blog/', include('blog.urls', namespace="blog")),` to urls.py
+4. Add `url(r'^blog/', include('wagtail_blog.urls', namespace="blog")),` to urls.py
 5. `python manage.py migrate`
-6. Override [templates](/blog/templates/blog/) as needed.
+6. Override [templates](/wagtail_blog/templates/blog/) as needed.
 
 ## Extending
 

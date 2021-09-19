@@ -32,7 +32,7 @@ class BlogIndexPage(BlogIndexPageAbstract):
 
     @property
     def blogs(self):
-        # Get list of blog pages that are descendants of this page
+        # Get list of wagtail_blog pages that are descendants of this page
         blogs = BlogPage.objects.descendant_of(self).live()
         blogs = blogs.order_by(
             '-date'
@@ -93,7 +93,7 @@ class BlogIndexPage(BlogIndexPageAbstract):
 
         return context
 
-    subpage_types = ['blog.BlogPage']
+    subpage_types = ['wagtail_blog.BlogPage']
 
 
 @register_snippet
@@ -121,7 +121,7 @@ class BlogTag(Tag):
 
 
 def get_blog_context(context):
-    """ Get context data useful on all blog related pages """
+    """ Get context data useful on all wagtail_blog related pages """
     context['authors'] = get_user_model().objects.filter(
         owned_pages__live=True,
         owned_pages__content_type__model='blogpage'
@@ -143,7 +143,7 @@ class BlogPage(BlogPageAbstract):
         verbose_name_plural = _('Blog pages')
 
     def get_blog_index(self):
-        # Find closest ancestor which is a blog index
+        # Find closest ancestor which is a wagtail_blog index
         return self.get_ancestors().type(BlogIndexPage).last()
 
     def get_context(self, request, *args, **kwargs):
@@ -153,10 +153,10 @@ class BlogPage(BlogPageAbstract):
         context['COMMENTS_APP'] = COMMENTS_APP
         return context
 
-    parent_page_types = ['blog.BlogIndexPage']
+    parent_page_types = ['wagtail_blog.BlogIndexPage']
 
     related_blog = StreamField([
-        ('related_blog', blocks.PageChooserBlock(target_model='blog.BlogPage', required=False))
+        ('related_blog', blocks.PageChooserBlock(target_model='wagtail_blog.BlogPage', required=False))
     ], null=True, blank=True)
 
     content_panels = BlogPageAbstract.content_panels + [
@@ -165,4 +165,4 @@ class BlogPage(BlogPageAbstract):
 
     @property
     def url(self):
-        return reverse('blog:blog_view', args=(self.slug, ))
+        return reverse('wagtail_blog:blog_view', args=(self.slug, ))

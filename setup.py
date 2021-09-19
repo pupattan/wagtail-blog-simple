@@ -4,12 +4,12 @@ from setuptools import setup, find_packages
 README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 setup(
     name='wagtail-blog-simple',
-    version='1.0.1',
+    version='1.0.3',
     packages=find_packages(),
     url='https://github.com/pupattan/wagtail-blog-simple',
     license='MIT',
     include_package_data=True,
-    keywords="django wagtail blog app",
+    keywords="django wagtail wagtail_blog app",
     author='Pulak Pattanayak',
     long_description=README,
     long_description_content_type='text/markdown',
