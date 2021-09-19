@@ -17,7 +17,7 @@
         <ul class="list-unstyled the-loop">
         {% for blog in blogs %}
             <li class="blog-post-item{% if forloop.first and not category and not tag %} first-reset{% endif %}">
-                {% include 'blog/blog_post.html' with include_context="index_page" %}
+                {% include 'wagtail_blog/blog_post.html' with include_context="index_page" %}
             </li>
         {% endfor %}
         </ul>
